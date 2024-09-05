@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+var resultado;
+var valoresTotais = 0;
+var media = 0 ;
+var soma = 0;
+
+resultado = prompt("Por favor, entre sua nota. Digite -1 para sair.");
+resultado = parseInt(resultado);
+
+if(resultado == -1)
+{
+alert("Nenhuma nota recebida.");
+}
+else
+{
+
+while(resultado != -1)
+{
+soma = resultado + soma;        
+valoresTotais++;
+media = soma / valoresTotais;      
+
+resultado = prompt("Por favor, entre sua nota. Digite -1 para sair.");
+resultado = parseInt(resultado);
+
+}
+alert("Sua média é = " + media);
+
+}
+    </script>
+</body>
+</html>
