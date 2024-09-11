@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Temperatura</title>
+</head>
+<body>
+
+<h1>Simulador de Temperatura</h1>
+<p>Temperatura Atual: <span id="temperaturaDisplay">25</span>°C</p>
+<button id="diminuirBtn">Diminuir</button>
+<button id="aumentarBtn">Aumentar</button>
+
+<script>
+    class SimuladorTemperatura {
+        constructor(temperaturaInicial) {
+            this.temperatura = temperaturaInicial;
+        }
+
+        diminuirTemperatura() {
+            this.temperatura--;
+            this.atualizarDisplay();
+        }
+
+        aumentarTemperatura() {
+            this.temperatura++;
+            this.atualizarDisplay();
+        }
+
+
+
+        atualizarDisplay() {
+            document.getElementById('temperaturaDisplay').textContent = this.temperatura;
+        }
+    }
+
+    const simulador = new SimuladorTemperatura(25);
+
+    document.getElementById('diminuirBtn').addEventListener('click', function() {
+        simulador.diminuirTemperatura();
+    });
+
+    document.getElementById('aumentarBtn').addEventListener('click', function() {
+        simulador.aumentarTemperatura();
+    });
+</script>
+
+</body>
+</html>
